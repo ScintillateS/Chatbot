@@ -19,7 +19,7 @@ public class Magpie4
 		return "Hello, let's talk.";
 	}
 
-	public boolean aboutGames = false;
+	public boolean aboutAnimals = false;
 
 	/**
 	 * Gives a response to a user statement
@@ -41,19 +41,19 @@ public class Magpie4
 		// Code to lead the human towards a specific topic
 		else if (findKeyword(statement, "animals") >= 0 || findKeyword(statement, "species") >= 0){
 			response = "What's your favorite animal? ";
-			aboutGames  = true;
+			aboutAnimals  = true;
 			return response;
 		}
 
 		// Code that demonstrates interaction across the specific topic
-		else if (aboutGames == true){
+		else if (aboutAnimals == true){
 			if (findKeyword(statement, "yes") >= 0){
 				response = "Do find zoology intriguing? ";
 				return response;
 			}
 			else if (findKeyword(statement, "no") >= 0){
 				response = "If you were an animal, would you be a predator or prey? ";
-				aboutGames = false;
+				aboutAnimals = false;
 				return response;
 			}
 			else if (findKeyword(statement, "predator") >= 0){
@@ -70,7 +70,7 @@ public class Magpie4
 			}
 			else {
 				response = "I bet I know more about " + statement + " than you.  ";
-				aboutGames = false;
+				aboutAnimals = false;
 				return response;
 			}
 		}
